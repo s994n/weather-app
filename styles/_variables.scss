@@ -1,0 +1,16 @@
+$colors: (
+  'background': #384749,
+  'button-default': #EFC7A8,
+  'button-disabled': #cccccc,
+  'dark-grey': #273444,
+  'white': #ffffff,
+);
+
+$themes: (
+  'default': (
+    'background': map-get($colors, "background"),
+    'color': map-get($colors, "white"),
+    'font-family': 'Open Sans',
+  ),
+  // ... other themes
+);

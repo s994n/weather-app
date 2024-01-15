@@ -1,0 +1,6 @@
+@mixin applyTheme($theme-name) {
+  $theme-map: map-get($themes, $theme-name);
+  background: map-get($theme-map, 'background');
+  color: map-get($theme-map, 'color');
+  font-family: map-get($theme-map, 'font-family'), sans-serif;
+}

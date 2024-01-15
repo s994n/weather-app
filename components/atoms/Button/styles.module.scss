@@ -1,4 +1,4 @@
-@import '../../../styles/theme.scss';
+@import '@/styles/variables';
 
 .button {
   padding: 10px 20px;
@@ -7,12 +7,7 @@
   cursor: pointer;
 
   &.default {
-    background: map-get($theme-default, background);
-    color: map-get($theme-default, color);
-  }
-
-  &.disabled {
-    background: map-get($theme-disabled, background);
-    color: map-get($theme-disabled, color);
+    background: map-get($colors, 'button-default');
+    color: map-get($colors, 'dark-grey');
   }
 }

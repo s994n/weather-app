@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Add a free WeatherAPI key, from https://www.weatherapi.com/, to a .env.local file at the route of the project (you will need to sign up for an account).
+
 First, run the development server:
 
 ```bash
@@ -37,4 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 ## Future ideas:
-* Add a generator for creating new components from a template
+* Add a generator for creating new components from a template - this could be used for example to automatically add the display name and the higher order component wrapper to every new component generated
+* Add mixin for media query between two breakpoints
+* Add prettier for code formatting (the project already has eslint)
+* Improve styling, e.g. add a dark theme

@@ -1,13 +1,15 @@
-// components/atoms/InputField/index.tsx
 import React, { InputHTMLAttributes } from 'react';
 
 // Constants
 import { InputFieldVariants } from '@/constants/InputFieldVariants';
 
+// HOCs
+import { WithValidateVariantIsInStyles } from '@/hocs/WithValidateVariantIsInStyles';
+
 // Styles
 import styles from './styles.module.scss';
 
-type InputFieldProps = InputHTMLAttributes<HTMLInputElement> & {
+interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   variant?: InputFieldVariants;
 };
 
@@ -21,4 +23,4 @@ const InputField: React.FC<InputFieldProps> = ({
   );
 };
 
-export default InputField;
+export default WithValidateVariantIsInStyles(styles)(InputField);

@@ -1,2 +1,2 @@
-export { default as SearchCurrentWeather } from "./SearchCurrentWeather";
+export { default as SearchCityCurrentWeather } from "./SearchCityCurrentWeather";
 

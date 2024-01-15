@@ -1,11 +1,8 @@
-// Utils
-import { searchCurrentWeather } from "@/utils/actions";
+// Components
+import { InputField, FormSubmit } from "../../atoms";
 
 // Constants
 import { ButtonVariants, InputFieldVariants } from "@/constants";
-
-// Components
-import { Button, InputField } from "../../atoms";
 
 // Styles
 import styles from "./styles.module.scss";
@@ -19,6 +16,7 @@ interface SingleInputFormProps {
   buttonVariant?: ButtonVariants;
   buttonAriaLabel: string;
   buttonLabel: string;
+  formAriaLabel?: string;
   action: (formData: FormData) => Promise<void>;
 }
 
@@ -31,10 +29,11 @@ const SingleInputForm: React.FC<SingleInputFormProps> = ({
   buttonVariant,
   buttonAriaLabel,
   buttonLabel,
+  formAriaLabel,
   action
 }) => {
   return (
-    <form className={styles["search-form"]} action={action}>
+    <form className={styles["search-form"]} action={action} aria-label={formAriaLabel}>
       <label htmlFor={id} className={styles["visually-hidden"]}>
         {placeholder} {/* Assuming placeholder is descriptive enough for the label */}
       </label>
@@ -46,15 +45,13 @@ const SingleInputForm: React.FC<SingleInputFormProps> = ({
         aria-required="true"
         placeholder={placeholder}
         className={styles.input}
-        required={true}
+        required
       />
-      <Button
-        type="submit"
-        aria-label={buttonAriaLabel}
-        variant={buttonVariant}
-      >
-        {buttonLabel}
-      </Button>
+      <FormSubmit
+        buttonVariant={buttonVariant}
+        buttonAriaLabel={buttonAriaLabel}
+        buttonLabel={buttonLabel}
+      />
     </form>
   );
 };

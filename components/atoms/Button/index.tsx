@@ -3,13 +3,16 @@ import React, { ReactNode } from "react";
 // Constants
 import { ButtonVariants } from "../../../constants/ButtonVariants";
 
+// HOCs
+import { WithValidateVariantIsInStyles } from "@/hocs/WithValidateVariantIsInStyles";
+
 // Styles
 import styles from "./styles.module.scss";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: ReactNode;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
   variant?: ButtonVariants;
-};
+}
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -24,4 +27,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default WithValidateVariantIsInStyles(styles)(Button);
