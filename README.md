@@ -45,5 +45,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 * Improve styling, e.g. add a dark theme; add spacing values to variables, update favicon icon
 * If the request to get current weather fails, provide a way for the user to retry the request or check their input if the error is due to an invalid city name.
 * Add more unit tests for better coverage and add integration and e2e tests for the whole application. Note: Cypress currently does not support Next.js version 14 and async Server Components :( 
-* Display any validation errors in the form (may need useFormState) 
+* Display any validation errors in the form (may need useFormState, which will make SingleInputForm a client component). E.g. at the mome nt if a city is not found then an error page is displayed. the user then needs to click back to the search form. Would probably be better to show the error on the form itself.
+* If possible from the API, get a list of available cities (possibly via the )
 

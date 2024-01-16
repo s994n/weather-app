@@ -9,7 +9,6 @@ export const getCityCurrentWeather = async (city: string) => {
 
   try {
     const query = city.toLowerCase();
-
     const url = `${baseUrl}/current.json?key=${apiKey}&q=${query}&aqi=no`;
     const response = await fetch(url);
 
@@ -18,8 +17,8 @@ export const getCityCurrentWeather = async (city: string) => {
       throw new NetworkError("Failed to fetch current weather data");
     }
 
-    const data: any = response.json();
-    if(!checkIfCityExists(city, data)) {
+    const data: any = await response.json();
+    if(!checkIfCityExists(query, data)) {
       throw new DataValidationError("City not found");
     }
     if (!data?.current) {
@@ -42,7 +41,6 @@ export const getCityCurrentWeather = async (city: string) => {
 
 export const checkIfCityExists = (searchedForCity: string, data: any) => {
   const cityFromAPI = data?.location?.name?.toLowerCase().trim();
-  console.log(cityFromAPI, searchedForCity, searchedForCity === cityFromAPI);
-  return searchedForCity.toLowerCase().trim() === cityFromAPI;
+  return searchedForCity === cityFromAPI;
 };
 
