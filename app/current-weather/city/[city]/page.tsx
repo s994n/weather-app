@@ -22,12 +22,7 @@ export async function generateMetadata({
 
 const CityCurrentWeather = async ({ params }: { params: { city: string } }) => {
   const city = params.city;
-  let currentWeather;
-  try {
-    currentWeather = await getCityCurrentWeather(city);
-  } catch (error) {
-    throw new Error(error instanceof Error ? error.message : String(error));
-  }
+  const currentWeather = await getCityCurrentWeather(city);
 
   return (
     <main>
