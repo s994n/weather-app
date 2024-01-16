@@ -1,15 +1,15 @@
 import { NetworkError, DataValidationError } from "@/utils/errors";
+const apiKey = process.env.WEATHER_API_KEY;
+const baseUrl = process.env.WEATHER_API_BASE_URL;
 
 export const getCityCurrentWeather = async (city: string) => {
-  const apiKey = process.env.WEATHER_API_KEY;
-  const baseUrl = process.env.WEATHER_API_BASE_URL;
-
   if (!apiKey || !baseUrl) {
     throw new Error("Missing required environment variables");
   }
 
   try {
     const query = city.toLowerCase();
+
     const url = `${baseUrl}/current.json?key=${apiKey}&q=${query}&aqi=no`;
     const response = await fetch(url);
 
@@ -18,10 +18,14 @@ export const getCityCurrentWeather = async (city: string) => {
       throw new NetworkError("Failed to fetch current weather data");
     }
 
-    const data = await response.json();
+    const data: any = response.json();
+    if(!checkIfCityExists(city, data)) {
+      throw new DataValidationError("City not found");
+    }
     if (!data?.current) {
       throw new DataValidationError("Current weather data is not available");
     }
+
     return data.current;
   } catch (error) {
     if (error instanceof NetworkError || error instanceof DataValidationError) {
@@ -35,3 +39,10 @@ export const getCityCurrentWeather = async (city: string) => {
     }
   }
 };
+
+export const checkIfCityExists = (searchedForCity: string, data: any) => {
+  const cityFromAPI = data?.location?.name?.toLowerCase().trim();
+  console.log(cityFromAPI, searchedForCity, searchedForCity === cityFromAPI);
+  return searchedForCity.toLowerCase().trim() === cityFromAPI;
+};
+
