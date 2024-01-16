@@ -11,7 +11,7 @@ export default function Error({
 }) {
   return (
     <main className="error">
-      <StyledHeader variant="hero">An error occured</StyledHeader>
+      <StyledHeader variant="hero">An error occurred</StyledHeader>
       <StyledHeader variant="subheader">
         The city could not be found
       </StyledHeader>

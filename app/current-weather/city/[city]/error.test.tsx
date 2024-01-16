@@ -5,12 +5,14 @@ import Error from "./error";
 import { NetworkError } from "@/utils/errors";
 
 describe("Error component", () => {
-  it("renders the error message", () => {
-    const networkErrorMessage = "Failed to fetch current weather data";
-    const networkError = new NetworkError(networkErrorMessage);
+  it("renders a static error message", () => {
     const { getByText } = render(
-      <Error error={networkError} reset={() => {}} />
+      <Error
+        error={new NetworkError("Failed to fetch current weather data")}
+        reset={() => {}}
+      />
     );
-    expect(getByText(networkErrorMessage)).toBeInTheDocument();
+    expect(getByText("An error occurred")).toBeInTheDocument();
+    expect(getByText("The city could not be found")).toBeInTheDocument();
   });
 });
