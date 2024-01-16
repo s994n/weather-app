@@ -1,5 +1,4 @@
 import React from "react";
-import Error from "next/error";
 
 // Components
 import { StyledHeader } from "@/components/atoms";
@@ -17,7 +16,6 @@ const CityCurrentWeather = async ({ params }: { params: { city: string } }) => {
         Current Weather for {params.city}
       </StyledHeader>
       <WeatherInfoItems weatherData={currentWeather} />
-      {/* TODO DISPLAY WEATHER DATA */}
     </main>
   );
 };
