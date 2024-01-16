@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 
 // Components
 import { StyledHeader } from "@/components/atoms";
@@ -11,7 +12,7 @@ export async function generateMetadata({
   params,
 }: {
   params: { city: string };
-}) {
+}): Promise<Metadata> {
   const city = params.city;
   return {
     title: `${city} current weather`,

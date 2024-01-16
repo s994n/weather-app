@@ -39,8 +39,7 @@ const SingleInputForm: React.FC<SingleInputFormProps> = ({
       aria-label={formAriaLabel}
     >
       <label htmlFor={id} className={styles["visually-hidden"]}>
-        {placeholder}{" "}
-        {/* Assuming placeholder is descriptive enough for the label */}
+        {placeholder}
       </label>
       <InputField
         variant={inputFieldVariant}

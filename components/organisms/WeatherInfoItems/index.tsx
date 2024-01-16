@@ -9,7 +9,7 @@ interface WeatherInfoItemsProps {
 }
 
 type WeatherData = {
-  [key: string]: number; // Adjust the type based on your actual API response
+  [key: string]: number | string;
 };
 
 interface WeatherInfoProps {

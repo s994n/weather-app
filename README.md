@@ -1,35 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Weather app
+A weather application that allows users to search for the current weather conditions of a city. It use the WeatherAPI service (https://www.weatherapi.com/) to retrieve weather data.
+
 
 ## Getting Started
 
+
+
+### Running the app locally
+
+Clone the repository. Run the following commands in the root of the project:
+
+Install dependencies:
+``` bash
+npm install
+```
+
 Add a free WeatherAPI key, from https://www.weatherapi.com/, to a .env.local file at the route of the project (you will need to sign up for an account).
 
-First, run the development server:
+Then run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Using the app locally
+Search for a city and see the current weather conditions: When searching for a city, you will be redirected to a `/current-weather/city/[city-name]` page, displaying the weather conditions. If the city is not found, an error message will be displayed on the `/current-weather/city/[city-name]` page (see also note about error handling in production in the Future ideas/improvements section lower down).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Running tests
 
-## Learn More
+To run the tests, run the following command in the root of the project:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm test
+```
 
 ## Deploy on Vercel
 
@@ -37,7 +43,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Future ideas:
+## Future ideas/improvements:
 
 - Add a generator for creating new components from a template - this could be used for example to automatically add the display name and the higher order component wrapper to every new component generated
 - Add mixin for media query between two breakpoints
@@ -48,3 +54,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Display any validation errors in the form (may need useFormState, which will make SingleInputForm a client component). E.g. at the mome nt if a city is not found then an error page is displayed. the user then needs to click back to the search form. Would probably be better to show the error on the form itself.
 - If possible from the API, get a list of available cities (possibly via the )
 - Improve error handling/validation in production: currently in the built app, a message is being displayed on the current-weather/city/[city] error page, when an error is thrown from the CityCurrentWeather component (page): 'An error occurred in the Server Components render. The specific message is omitted in production builds to avoid leaking sensitive details. A digest property is included on this error instance which may provide additional details about the nature of the error.' This is not occuring in development and should be investigated to allow the error message to be displayed as expected in production.
+- Dockerize the app

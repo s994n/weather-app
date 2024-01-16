@@ -2,7 +2,6 @@ import React from "react";
 import { styledHeaderVariants } from "@/constants/styledHeaderVariants";
 
 // HOCs
-// import { WithValidateVariantIsInStyles } from "@/hocs/WithValidateVariantIsInStyles";
 import { WithValidateVariantIsInStyles } from "@/hocs/WithValidateVariantIsInStyles";
 
 // Styles
@@ -47,5 +46,3 @@ const StyledHeader: React.FC<StyledHeaderProps> = ({
 };
 
 export default WithValidateVariantIsInStyles(styles)(StyledHeader);
-
-StyledHeader.displayName = "StyledHeader";

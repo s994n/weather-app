@@ -1,9 +1,9 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
+// Components
 import { SearchCityCurrentWeather } from "@components/organisms";
-
 import { StyledHeader } from "@components/atoms";
+
+// Styles
+import styles from "./page.module.scss";
 
 export default function Home() {
   return (
