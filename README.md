@@ -42,4 +42,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 * Add a generator for creating new components from a template - this could be used for example to automatically add the display name and the higher order component wrapper to every new component generated
 * Add mixin for media query between two breakpoints
 * Add prettier for code formatting (the project already has eslint)
-* Improve styling, e.g. add a dark theme
+* Improve styling, e.g. add a dark theme; add spacing values to variables
+* If the request to get current weather fails, provide a way for the user to retry the request or check their input if the error is due to an invalid city name.

@@ -9,5 +9,6 @@
   &.default {
     background: map-get($colors, 'button-default');
     color: map-get($colors, 'dark-grey');
+    font-size: 1rem;
   }
 }

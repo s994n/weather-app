@@ -5,7 +5,6 @@ import { redirect } from "next/navigation";
 export async function searchCityCurrentWeather(formData: FormData) {
   // TODO Implement error handling
   const location = formData.get("location");
-  console.log(location);
 
   if (!location || typeof location !== 'string' || location.trim() === "") {
     throw new Error("Location is required");
