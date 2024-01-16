@@ -36,11 +36,9 @@ To run the tests, run the following command in the root of the project:
 npm test
 ```
 
-## Deploy on Vercel
+## Deployed on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This app is deployed at https://weather-app-realtime.vercel.app/
 
 ## Future ideas/improvements:
 
