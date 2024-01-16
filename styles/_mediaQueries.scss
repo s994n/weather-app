@@ -1,0 +1,22 @@
+$breakpoints: (
+  largeScreen: 1280px,
+  largerScreen: 1824px,
+  largestScreen: 1920px,
+  tablet: 1024px,
+  bigPhone: 840px,
+  phone: 800px,
+  smallPhone: 480px,
+  smallerPhone: 360px,
+);
+
+@mixin queryAbove($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin queryBelow($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}

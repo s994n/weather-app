@@ -1,0 +1,14 @@
+@import "@/styles/variables";
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &.default {
+    background: map-get($colors, "button-default");
+    color: map-get($colors, "dark-grey");
+    font-size: 1rem;
+  }
+}
