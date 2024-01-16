@@ -1,4 +1,3 @@
 export enum InputFieldVariants {
-  default = 'default',
+  default = "default",
 }
-

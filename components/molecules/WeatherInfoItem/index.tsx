@@ -5,15 +5,22 @@ import { StyledHeader } from "@/components/atoms";
 import styles from "./styles.module.scss";
 
 export interface WeatherInfoItemProps {
-  key: string
+  key: string;
   title: string;
   value: string | number;
   unit?: string;
 }
 
-export const WeatherInfoItem = ({ title, value, unit }: WeatherInfoItemProps) => {
+export const WeatherInfoItem = ({
+  title,
+  value,
+  unit,
+}: WeatherInfoItemProps) => {
   return (
-    <section className={styles["weather-info-item"]} aria-labelledby="weather-info-title">
+    <section
+      className={styles["weather-info-item"]}
+      aria-labelledby="weather-info-title"
+    >
       <StyledHeader variant="subheader" id="weather-info-title">
         {title}: {value} {unit}
       </StyledHeader>

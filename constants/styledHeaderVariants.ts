@@ -1,4 +1,4 @@
 export const styledHeaderVariants = {
-  hero: 'h1',
-  subheader: 'h2',
+  hero: "h1",
+  subheader: "h2",
 };

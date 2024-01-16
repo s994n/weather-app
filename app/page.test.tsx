@@ -4,8 +4,8 @@ import Home from "./page";
 
 jest.mock("react-dom");
 
-// 
-jest.mock('@components/molecules/SingleInputForm', () => ({
+//
+jest.mock("@components/molecules/SingleInputForm", () => ({
   __esModule: true,
   default: ({
     children,
@@ -24,11 +24,7 @@ jest.mock('@components/molecules/SingleInputForm', () => ({
     buttonVariant: string;
     buttonAriaLabel: string;
     buttonLabel: string;
-  }) => (
-    <form {...props}>
-      {children}
-    </form>
-  ),
+  }) => <form {...props}>{children}</form>,
 }));
 
 it("renders and matches snapshot", () => {

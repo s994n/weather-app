@@ -1,5 +1,4 @@
-@import '@/styles/mediaQueries';;
-
+@import "@/styles/mediaQueries";
 
 .styled-text {
   margin: 0;
@@ -9,11 +8,11 @@
 
 // Specific variants
 .hero {
-  @include queryBelow('largeScreen') {
+  @include queryBelow("largeScreen") {
     font-size: 2.4rem;
   }
 
-  @include queryAbove('largeScreen') {
+  @include queryAbove("largeScreen") {
     font-size: 5rem;
   }
 
@@ -22,11 +21,11 @@
 }
 
 .subheader {
-  @include queryBelow('largeScreen') {
+  @include queryBelow("largeScreen") {
     font-size: 1.5rem;
   }
 
-  @include queryAbove('largeScreen') {
+  @include queryAbove("largeScreen") {
     font-size: 2rem;
   }
 

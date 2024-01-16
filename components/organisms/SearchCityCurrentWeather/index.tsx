@@ -10,7 +10,10 @@ import { SingleInputForm } from "../../molecules";
 
 const SearchCityCurrentWeather: React.FC = () => {
   return (
-    <section className="search-section" aria-labelledby="city-current-weather-search-header">
+    <section
+      className="search-section"
+      aria-labelledby="city-current-weather-search-header"
+    >
       <StyledHeader variant="subheader" id="city-current-weather-search-header">
         Search for the current weather by city name
       </StyledHeader>

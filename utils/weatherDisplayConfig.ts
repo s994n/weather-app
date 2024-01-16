@@ -2,22 +2,22 @@ export const weatherDisplayConfig = [
   {
     title: "Last Updated at (local time)",
     key: "last_updated",
-    unit: ""
+    unit: "",
   },
   {
     title: "Temperature",
     key: "temp_c",
-    unit: "degrees Celsius"
+    unit: "degrees Celsius",
   },
   {
     title: "Humidity",
     key: "humidity",
-    unit: "%"
+    unit: "%",
   },
   {
     title: "Wind",
     key: "wind_kph",
-    unit: "kph"
-  }
+    unit: "kph",
+  },
   // Add more configurations as needed
 ];

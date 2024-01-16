@@ -1,4 +1,4 @@
-@import '@/styles/mediaQueries';
+@import "@/styles/mediaQueries";
 
 .search-form {
   display: flex;
@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 1rem;
 
-  @include queryAbove('tablet') {
+  @include queryAbove("tablet") {
     flex-direction: row;
     align-items: center;
   }

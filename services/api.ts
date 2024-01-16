@@ -18,7 +18,7 @@ export const getCityCurrentWeather = async (city: string) => {
     }
 
     const data: any = await response.json();
-    if(!checkIfCityExists(query, data)) {
+    if (!checkIfCityExists(query, data)) {
       throw new DataValidationError("City not found");
     }
     if (!data?.current) {
@@ -43,4 +43,3 @@ export const checkIfCityExists = (searchedForCity: string, data: any) => {
   const cityFromAPI = data?.location?.name?.toLowerCase().trim();
   return searchedForCity === cityFromAPI;
 };
-

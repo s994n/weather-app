@@ -30,12 +30,17 @@ const SingleInputForm: React.FC<SingleInputFormProps> = ({
   buttonAriaLabel,
   buttonLabel,
   formAriaLabel,
-  action
+  action,
 }) => {
   return (
-    <form className={styles["search-form"]} action={action} aria-label={formAriaLabel}>
+    <form
+      className={styles["search-form"]}
+      action={action}
+      aria-label={formAriaLabel}
+    >
       <label htmlFor={id} className={styles["visually-hidden"]}>
-        {placeholder} {/* Assuming placeholder is descriptive enough for the label */}
+        {placeholder}{" "}
+        {/* Assuming placeholder is descriptive enough for the label */}
       </label>
       <InputField
         variant={inputFieldVariant}

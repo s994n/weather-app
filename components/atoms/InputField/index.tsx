@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes } from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 // Constants
 import { InputFieldVariants } from "@/constants/InputFieldVariants";
@@ -20,7 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
   ...props
 }) => {
   const inputClass = classNames(
-    styles['input-field'],
+    styles["input-field"],
     styles[variant],
     className
   );

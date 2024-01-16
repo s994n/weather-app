@@ -1,4 +1,4 @@
 module.exports = {
-  ...jest.requireActual('react-dom'), // This will import all of the exports from the actual react-dom module
+  ...jest.requireActual("react-dom"),
   useFormStatus: jest.fn(() => ({ pending: false })), // Mock implementation of useFormStatus
 };

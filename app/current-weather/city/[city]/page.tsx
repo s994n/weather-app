@@ -7,7 +7,11 @@ import { WeatherInfoItems } from "@/components/organisms";
 // Services
 import { getCityCurrentWeather } from "@/services/api";
 
-export async function generateMetadata({ params }: { params: { city: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { city: string };
+}) {
   const city = params.city;
   return {
     title: `${city} current weather`,

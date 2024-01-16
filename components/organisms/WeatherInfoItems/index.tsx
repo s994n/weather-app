@@ -14,8 +14,7 @@ type WeatherData = {
 
 interface WeatherInfoProps {
   weatherData: WeatherData;
-};
-
+}
 
 const WeatherInfoItems: React.FC<WeatherInfoProps> = ({ weatherData }) => {
   return (
@@ -33,7 +32,6 @@ const WeatherInfoItems: React.FC<WeatherInfoProps> = ({ weatherData }) => {
       })}
     </div>
   );
-
 };
 
 export default WeatherInfoItems;
