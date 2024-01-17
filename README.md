@@ -36,12 +36,18 @@ To run the tests, run the following command in the root of the project:
 npm test
 ```
 
+## A note on the `SingleInputForm` component
+
+The form component is a client component, as it uses Formik to handle form state and validation. I ultimately felt that it is not necessary to use a server component for this form.
+However, I did initially try to use a server component, which was designed to take a server action as a prop. That form still exists in `components/molecules/SingleInputFormServer` and an action at `utils/actions`. Rather than deleting this code, I've left it in as it might be useful for future reference. For example, it could be updated in future if some database operation or other server-side logic were needed.
+
 ## Deployed on Vercel
 
 This app is deployed at https://weather-app-realtime.vercel.app/
 
 ## Future ideas/improvements:
 
+- I'm currently seeing a warning in the console: `Warning: Extra attributes from the server:...`, which should be investigated in future (perhaps owing to a mismatch between components rendered on the server- and client-sides)
 - Add a generator for creating new components from a template - this could be used for example to automatically add the display name and the higher order component wrapper to every new component generated
 - Improve styling, e.g. add a dark theme; add spacing values to variables, update favicon icon; add mixin for media query between two breakpoints
 - If the request to get current weather fails, provide a way for the user to retry the request or check their input if the error is due to an invalid city name.
