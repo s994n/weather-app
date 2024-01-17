@@ -47,6 +47,7 @@ This app is deployed at https://weather-app-realtime.vercel.app/
 
 ## Future ideas/improvements:
 
+- `isSubmitting` on the `SingleInputForm` doesn't seem to be updating the button style as expected. This needs to be investigated and fixed. 
 - I'm currently seeing a warning in the console: `Warning: Extra attributes from the server:...`, which should be investigated in future (perhaps owing to a mismatch between components rendered on the server- and client-sides)
 - Add a generator for creating new components from a template - this could be used for example to automatically add the display name and the higher order component wrapper to every new component generated
 - Improve styling, e.g. add a dark theme; add spacing values to variables, update favicon icon; add mixin for media query between two breakpoints
