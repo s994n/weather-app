@@ -1,8 +1,9 @@
-// Utils
-import { searchCityCurrentWeather } from "@/utils/actions";
+"use client";
+
+import { cityValidationSchema } from "@/utils/validationSchemas";
 
 // Constants
-import { ButtonVariants, InputFieldVariants } from "@/constants";
+import { ButtonVariants, InputFieldVariants, PageRoutes } from "@/constants";
 
 // Components
 import { StyledHeader } from "../../atoms";
@@ -26,7 +27,9 @@ const SearchCityCurrentWeather: React.FC = () => {
         buttonVariant={ButtonVariants.default}
         buttonAriaLabel="Search for current weather"
         buttonLabel="Search current weather"
-        action={searchCityCurrentWeather}
+        routeToPage={PageRoutes.cityCurrentWeather}
+        formAriaLabel="Search for the current weather by city name"
+        validationSchema={cityValidationSchema}
       />
     </section>
   );

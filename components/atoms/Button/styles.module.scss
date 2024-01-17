@@ -11,4 +11,10 @@
     color: map-get($colors, "dark-grey");
     font-size: 1rem;
   }
+
+  &.disabled {
+    background: map-get($colors, "button-disabled");
+    color: map-get($colors, "white");
+    font-size: 1rem;
+  }
 }

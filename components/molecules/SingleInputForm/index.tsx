@@ -1,5 +1,11 @@
+"use client";
+
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useRouter } from "next/navigation";
+
 // Components
-import { InputField, FormSubmit } from "../../atoms";
+import { Button, InputField } from "@components/atoms";
 
 // Constants
 import { ButtonVariants, InputFieldVariants } from "@/constants";
@@ -16,8 +22,9 @@ interface SingleInputFormProps {
   buttonVariant?: ButtonVariants;
   buttonAriaLabel: string;
   buttonLabel: string;
-  formAriaLabel?: string;
-  action: (formData: FormData) => Promise<void>;
+  formAriaLabel: string;
+  routeToPage: string;
+  validationSchema: any;
 }
 
 const SingleInputForm: React.FC<SingleInputFormProps> = ({
@@ -30,33 +37,48 @@ const SingleInputForm: React.FC<SingleInputFormProps> = ({
   buttonAriaLabel,
   buttonLabel,
   formAriaLabel,
-  action,
+  routeToPage,
+  validationSchema,
 }) => {
+  const router = useRouter();
   return (
-    <form
-      className={styles["search-form"]}
-      action={action}
-      aria-label={formAriaLabel}
+    <Formik
+      initialValues={{ [name]: "" }}
+      validationSchema={validationSchema}
+      onSubmit={(values, { setSubmitting }) => {
+        router.push(`${routeToPage}/${values.location}`);
+        setSubmitting(false);
+      }}
     >
-      <label htmlFor={id} className={styles["visually-hidden"]}>
-        {placeholder}
-      </label>
-      <InputField
-        variant={inputFieldVariant}
-        type={inputFieldType}
-        id={id}
-        name={name}
-        aria-required="true"
-        placeholder={placeholder}
-        className={styles.input}
-        required
-      />
-      <FormSubmit
-        buttonVariant={buttonVariant}
-        buttonAriaLabel={buttonAriaLabel}
-        buttonLabel={buttonLabel}
-      />
-    </form>
+      {({ isSubmitting }) => (
+        <Form className={styles["search-form"]} aria-label={formAriaLabel}>
+          <label htmlFor={id} className={styles["visually-hidden"]}>
+            {placeholder}
+          </label>
+          <Field
+            id={id}
+            name={name}
+            placeholder={placeholder}
+            as={InputField}
+            type={inputFieldType}
+            variant={inputFieldVariant}
+            required
+          />
+          <Button
+            type="submit"
+            aria-label={buttonAriaLabel}
+            variant={isSubmitting ? ButtonVariants.disabled : buttonVariant}
+          >
+            {isSubmitting ? "Getting weather..." : buttonLabel}
+          </Button>
+          <ErrorMessage
+            name={name}
+            component="div"
+            className={styles["error-message"]}
+          />
+        </Form>
+      )}
+    </Formik>
   );
 };
 

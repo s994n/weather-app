@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders and matches snapshot 1`] = `
+exports[`Home Page Snapshot should match the snapshot 1`] = `
 <DocumentFragment>
   <main
     class="main"
@@ -23,10 +23,33 @@ exports[`renders and matches snapshot 1`] = `
         Search for the current weather by city name
       </h2>
       <form
-        id="location"
-        name="location"
-        placeholder="City name"
-      />
+        action="#"
+        aria-label="Search for the current weather by city name"
+        class="search-form"
+      >
+        <label
+          class="visually-hidden"
+          for="location"
+        >
+          City name
+        </label>
+        <input
+          class="input-field default"
+          id="location"
+          name="location"
+          placeholder="City name"
+          required=""
+          type="text"
+          value=""
+        />
+        <button
+          aria-label="Search for current weather"
+          class="button default"
+          type="submit"
+        >
+          Search current weather
+        </button>
+      </form>
     </section>
   </main>
 </DocumentFragment>

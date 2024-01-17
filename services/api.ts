@@ -40,6 +40,12 @@ export const getCityCurrentWeather = async (city: string) => {
 };
 
 export const checkIfCityExists = (searchedForCity: string, data: any) => {
-  const cityFromAPI = data?.location?.name?.toLowerCase().trim();
+  //Needs a refactor, to use similar logic as om current-weather/city/[city] page for replacing spaces with plusses
+  const cityFromAPI = data?.location?.name
+    ?.toLowerCase()
+    .trim()
+    .replace(/ /g, "+");
+
+  const cityFromAPIWithPlusses = cityFromAPI;
   return searchedForCity === cityFromAPI;
 };
