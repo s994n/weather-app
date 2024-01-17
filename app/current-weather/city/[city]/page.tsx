@@ -21,13 +21,19 @@ export async function generateMetadata({
 }
 
 const CityCurrentWeather = async ({ params }: { params: { city: string } }) => {
-  const city = params.city;
+  // TODO: Needs a refactor to abstract functionality for replacing certain characters
+  const replaceSpaceCharacters = (city: string) => {
+    return city.replace(/%20/g, "+");
+  };
+
+  const city = replaceSpaceCharacters(params.city);
+
   const currentWeather = await getCityCurrentWeather(city);
 
   return (
     <main>
       <StyledHeader variant="hero" caps>
-        Current Weather for {city}
+        Current Weather for {city.replace(/\+/g, " ")}
       </StyledHeader>
       <WeatherInfoItems weatherData={currentWeather} />
     </main>

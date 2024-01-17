@@ -1,3 +1,7 @@
+"use client";
+
+import { cityValidationSchema } from "@/utils/validationSchemas";
+
 // Constants
 import { ButtonVariants, InputFieldVariants, PageRoutes } from "@/constants";
 
@@ -25,6 +29,7 @@ const SearchCityCurrentWeather: React.FC = () => {
         buttonLabel="Search current weather"
         routeToPage={PageRoutes.cityCurrentWeather}
         formAriaLabel="Search for the current weather by city name"
+        validationSchema={cityValidationSchema}
       />
     </section>
   );

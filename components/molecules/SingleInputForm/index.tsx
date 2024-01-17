@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useRouter } from "next/navigation";
 
 // Components
@@ -24,6 +24,7 @@ interface SingleInputFormProps {
   buttonLabel: string;
   formAriaLabel: string;
   routeToPage: string;
+  validationSchema: any;
 }
 
 const SingleInputForm: React.FC<SingleInputFormProps> = ({
@@ -37,12 +38,13 @@ const SingleInputForm: React.FC<SingleInputFormProps> = ({
   buttonLabel,
   formAriaLabel,
   routeToPage,
+  validationSchema,
 }) => {
   const router = useRouter();
-
   return (
     <Formik
       initialValues={{ [name]: "" }}
+      validationSchema={validationSchema}
       onSubmit={(values, { setSubmitting }) => {
         router.push(`${routeToPage}/${values.location}`);
         setSubmitting(false);
@@ -69,6 +71,11 @@ const SingleInputForm: React.FC<SingleInputFormProps> = ({
           >
             {isSubmitting ? "Getting weather..." : buttonLabel}
           </Button>
+          <ErrorMessage
+            name={name}
+            component="div"
+            className={styles["error-message"]}
+          />
         </Form>
       )}
     </Formik>

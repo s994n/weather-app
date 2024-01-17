@@ -52,6 +52,7 @@ This app is deployed at https://weather-app-realtime.vercel.app/
 - Improve styling, e.g. add a dark theme; add spacing values to variables, update favicon icon; add mixin for media query between two breakpoints
 - If the request to get current weather fails, provide a way for the user to retry the request or check their input if the error is due to an invalid city name.
 - Add more unit tests for better coverage and add integration and e2e tests for the whole application. Note: Cypress currently does not support Next.js version 14 for testing async Server Components :(
-- Display any validation errors on the form itself (may need useFormState, which will make SingleInputForm a client component). E.g. at the moment, if a city is not found then an error page is displayed. The user then needs to click back to the search form. Would probably be better to show the error on the form itself.
+- Improve validation on form
+- Refactor code associated with replacing characters (spaces/plusses/%20)
 - Dockerize the app
 - Improve error handling/validation in production: currently, a generic message is being displayed on the current-weather/city/[city] error page, when an error is thrown from the CityCurrentWeather component (page). As it stands, the message can't use the custom error messages that are set during the server-side fetching of data for [this reason](https://nextjs.org/docs/app/building-your-application/routing/error-handling#securing-sensitive-error-information). Again, displaying validation errors on the form itself could help to alieviate this (for example, to show the user an error on the form, via a client-side component, if a valid city is not inputted by the user).

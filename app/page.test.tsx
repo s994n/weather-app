@@ -12,7 +12,7 @@ jest.mock("next/navigation", () => ({
 
 import React from "react";
 import { render } from "@testing-library/react";
-import Home from "./page"; // Adjust the import path as needed
+import Home from "./page";
 
 describe("Home Page Snapshot", () => {
   it("should match the snapshot", () => {
